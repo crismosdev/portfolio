@@ -1,0 +1,730 @@
+/* 1. Root Variables */
+:root {
+    /* Main Palette */
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --light-text: #444444;
+
+    /* Comic colours */
+    --pink-highlight: #fe5b70;
+    --blue-highlight: #3b82f6;
+    --yellow-card: #ffcc29;
+    --card-background: #ffffff;
+
+    /* Typography */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Borders & Shadows */
+    --border-thick: 6px solid #000000;
+    --bold-shadow: 10px 10px 0px #000000;
+    --bold-shadow-small: 4px 4px 0px #000000;
+}
+
+/* 2. Global & Reset Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Thick border effect*/
+.bold-box {
+    border: var(--border-thick);
+    box-shadow: var(--bold-shadow);
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*  3. Header & Navigation (Floating Pill Style) */
+.site-header {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 16px;
+    max-width: 1200px;
+    margin: 40px auto 16px auto;
+    width: 90%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-text {
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-size: 24px;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background-color: var(--yellow-card);
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 0px #000000;
+}
+
+/* 4. Main Layout & Typography */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px 40px 16px;
+    width: 100%;
+}
+
+.container.index {
+    gap: 40px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start ;
+    width: 900px;
+    line-height: 1.4;
+}
+.hero-subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.highlight {
+    display: inline;
+    padding: 0 3px 1px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.highlight-pink {
+    background-color: var(--pink-highlight);
+    color: #ffffff;
+}
+
+.highlight-blue {
+    background-color: var(--blue-highlight);
+    color: #ffffff;
+}
+.highlight-yellow {
+    background-color: var(--yellow-card);
+    color: var(--text-color);
+}
+
+h1 {
+    font-size:82px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 70px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+h3 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+h4 {
+    font-size: 36;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 16px;
+    color: var(--light-text);
+    font-size: 18px;
+}
+
+/* About page */
+.about-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+
+.about-intro-text {
+    flex: 1;
+}
+
+.about-photo {
+    height: auto;
+    max-width: 420px;
+    border-radius: 28px;
+}
+
+.about-photo-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.skills-story,
+.experience-timeline {
+    margin-bottom: 48px;
+}
+
+.skill-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.skill-card h4 {
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+.skill-stars {
+    display: inline-flex;
+    gap: 2px;
+    line-height: 1;
+}
+
+.star {
+    font-size: 28px;
+    line-height: 1;
+    -webkit-text-stroke: 2px #000000;
+}
+
+.star.filled {
+    color: var(--yellow-card);
+}
+
+.star.empty {
+    color: #ffffff;
+}
+
+.skill-card p:last-child {
+    margin-bottom: 0;
+}
+
+.timeline {
+    list-style: none;
+    border-left: var(--border-thick);
+    margin-top: 24px;
+    padding-left: 32px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-year {
+    display: inline-block;
+    background-color: var(--yellow-card);
+    border: 2px solid #000000;
+    border-radius: 30px;
+    padding: 4px 16px;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+
+.timeline-card h4 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.timeline-card p:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-card a {
+    color: inherit;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--pink-highlight);
+} 
+
+/* 5. Cards */
+.card {
+    background-color: var(--card-background);
+    border: var(--border-thick);
+    border-radius: 16px;
+    padding: 24px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.grid-3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
+    margin-top: 24px;
+}
+
+.gallery-card,
+.project-card {
+    min-height: 380px;
+    justify-content: flex-start;
+}
+
+a.gallery-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery-card-text,
+.project-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+}
+
+.gallery-card h5,
+.project-card h5 {
+    margin-bottom: 0;
+    font-weight: 800;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.gallery-card p,
+.project-card-text p {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.project-card-text {
+    margin-bottom: 16px;
+}
+
+.project-img {
+    margin-bottom: 16px;
+}
+
+/* lift on hover for cards */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--bold-shadow);
+}
+
+.gallery-card img,
+.project-card img,
+.featured-img,
+.profile-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.gallery-card img,
+.project-card img,
+.profile-img {
+    border: 3px solid #000000;
+    box-shadow: var(--bold-shadow-small);
+}
+
+.hero .featured-img {
+    height: auto;
+    max-width: 420px;
+    border-radius: 28px;
+}
+
+.photo-caption {
+    font-size: 12px;
+    line-height: 1.3;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.project-card .btn {
+    margin-top: auto;
+}
+
+/* 6. Buttons */
+.btn {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px 24px;
+    border: 3px solid #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 800;
+    font-size: 16px;
+    display: inline-block;
+    box-shadow: var(--bold-shadow-small);
+    transition: all 0.1s ease;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Button click effect */
+.btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000000;
+}
+
+.btn-outline {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* 7. Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 600px;
+    background: var(--yellow-card);
+    padding: 40px;
+    border: 3px solid #000000;
+    border-radius: 16px;
+    box-shadow: var(--bold-shadow);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 8px 16px;
+    border: 3px solid #000000;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    box-shadow: 2px 2px 0px #000000;
+    transition: all 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #000000;
+    font-style: italic;
+}
+
+/* 8. Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 24px 24px;
+    margin-top: auto;
+    border-top: var(--border-thick);
+}
+
+footer p {
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px 24px;
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    justify-items: center;
+}
+
+.footer-heading {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--yellow-card);
+    margin-bottom: 12px;
+}
+
+.footer-nav ul,
+.footer-contact ul,
+.social-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-nav a,
+.footer-contact a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus,
+.footer-contact a:hover,
+.footer-contact a:focus,
+.footer-nav a.active {
+    color: var(--yellow-card);
+}
+
+.footer-contact a {
+    overflow-wrap: anywhere;
+}
+
+.footer-copyright {
+    padding-top: 24px;
+    border-top: 2px solid #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid #ffffff;
+    border-radius: 999px;
+    padding: 6px 14px 6px 8px;
+    transition: all 0.2s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.social-links svg,
+.social-links img {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.social-links img {
+    filter: invert(1);
+}
+
+.social-links a:hover img,
+.social-links a:focus img {
+    filter: none;
+}
+
+/* 9. Responsive Design (Media Queries) */
+
+/* Tablet Screen Size (Max width: 900px) */
+@media screen and (max-width: 900px) {
+    .container {
+        padding: 24px;
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .grid-3x3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-subtitle {
+        text-align: center;
+    }
+    
+    .about-photo {
+        display: none;
+    }
+    .gallery-page-section h2 {
+        font-size: 54px;
+    }
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-section .contact-form {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Mobile Screen Size (Max width: 600px) */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 16px;
+        margin: 0 auto;
+    }
+    .site-header {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        gap: 10px 8px;
+        padding: 12px;
+    }
+
+    /* Nav links become grid cells beside the logo: 3 + 3 */
+    .main-nav {
+        display: contents;
+    }
+
+    .bold-box {
+        border: 1px solid #000000;
+    }
+
+    .main-nav a {
+        font-size: 14px;
+        padding: 6px 8px;
+        border-radius: 8px;
+        border: 1px solid #000000;
+        text-align: center;
+        width: 100%;
+    }
+
+    .site-header span {
+        display: none;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    h2,
+    .gallery-page-section h2 {
+        text-align: center;
+        font-size: 36px;
+        line-height: 1.2;
+    }
+    
+    h3 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .grid-3x3 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .contact-form {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    /* Adjust neo-shadows for mobile so they don't break the layout */
+    .card, .contact-form, .site-header {
+        box-shadow: none;
+        border-radius: 8px;
+        border: 3px solid #000000;
+    }
+}
