@@ -315,7 +315,7 @@ p {
     text-decoration-thickness: 3px;
     text-underline-offset: 3px;
     text-decoration-color: var(--pink-highlight);
-} 
+}
 
 /* 5. Cards */
 .card {
@@ -517,14 +517,15 @@ footer p {
 
 .footer-inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 32px 24px;
+    /* Newsletter is the last column and needs the extra width for one line of lead text. */
+    grid-template-columns: minmax(110px, 0.8fr) minmax(180px, 1fr) minmax(140px, 0.9fr) minmax(340px, 2fr);
+    gap: 24px 20px;
     max-width: 1200px;
     margin: 0 auto 32px;
     justify-items: center;
 }
 
-.footer-heading {
+.newsletter-heading {
     font-size: 18px;
     font-weight: 800;
     color: var(--yellow-card);
@@ -565,6 +566,49 @@ footer p {
     border-top: 2px solid #ffffff;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.footer-newsletter {
+    width: 100%;
+}
+
+.footer-newsletter .newsletter-heading {
+    text-align: left;
+}
+
+.newsletter-lead {
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+}
+
+.newsletter-form .form-group label {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.newsletter-form .form-group input {
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.newsletter-form .btn {
+    background-color: var(--yellow-card);
+}
+
+.newsletter-form .btn:hover,
+.newsletter-form .btn:focus,
+.newsletter-form .btn:active {
+    background-color: var(--blue-highlight);
+    color: #000000;
 }
 
 .social-links a {
@@ -637,7 +681,7 @@ footer p {
     .hero-subtitle {
         text-align: center;
     }
-    
+
     .about-photo {
         display: none;
     }
@@ -655,6 +699,14 @@ footer p {
     .contact-section .contact-form {
         width: 100%;
         text-align: left;
+    }
+
+    .footer-inner {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .newsletter-lead {
+        white-space: normal;
     }
 }
 
@@ -694,18 +746,18 @@ footer p {
     .site-header span {
         display: none;
     }
-    
+
     h1 {
         font-size: 40px;
     }
-    
+
     h2,
     .gallery-page-section h2 {
         text-align: center;
         font-size: 36px;
         line-height: 1.2;
     }
-    
+
     h3 {
         font-size: 30px;
         line-height: 1.2;
