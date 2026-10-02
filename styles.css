@@ -484,14 +484,32 @@ a.gallery-card {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     padding: 8px 16px;
     border: 3px solid #000000;
     border-radius: 8px;
     font-size: 16px;
     font-family: inherit;
+    background-color: #ffffff;
     box-shadow: 2px 2px 0px #000000;
     transition: all 0.2s ease;
+}
+
+.field-hint {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.form-status:empty {
+    margin: 0;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .form-group input::placeholder,
