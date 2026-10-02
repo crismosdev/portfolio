@@ -454,11 +454,6 @@ a.gallery-card {
     box-shadow: 0px 0px 0px #000000;
 }
 
-.btn-outline {
-    background-color: #ffffff;
-    color: #000000;
-}
-
 /* 7. Form */
 .contact-form {
     display: flex;
