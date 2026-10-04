@@ -497,6 +497,16 @@ a.gallery-card {
     font-size: 14px;
 }
 
+/* Sits on the next line under its control so the message stays with that field. */
+.field-error {
+    display: none;
+    margin: 6px 0 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #7a1020;
+}
+
 .form-status:empty {
     margin: 0;
 }
