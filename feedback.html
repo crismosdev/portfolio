@@ -31,19 +31,19 @@
             <form id="feedback-form" class="contact-form">
                 <div class="form-group">
                     <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="full-name" minlength="2" required placeholder="Your full name" aria-describedby="full-name-error">
+                    <input type="text" id="full-name" name="full-name" minlength="2" required placeholder="Your full name">
                     <p id="full-name-error" class="field-error">Enter at least 2 characters.</p>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="you@example.com" aria-describedby="email-error">
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
                     <p id="email-error" class="field-error">Enter an email address with @ and a domain.</p>
                 </div>
 
                 <div class="form-group">
                     <label for="topic">Topic of Interest</label>
-                    <select id="topic" name="topic" required aria-describedby="topic-error">
+                    <select id="topic" name="topic" required>
                         <option value="" selected disabled>Select a topic</option>
                         <option value="web-development">Web development</option>
                         <option value="design">Design</option>
@@ -54,13 +54,13 @@
 
                 <div class="form-group">
                     <label for="comments">Comments</label>
-                    <textarea id="comments" name="comments" minlength="15" required placeholder="Your comments" aria-describedby="comments-error"></textarea>
+                    <textarea id="comments" name="comments" minlength="15" required placeholder="Your comments"></textarea>
                     <p id="comments-error" class="field-error">Enter at least 15 characters.</p>
                 </div>
 
                 <div class="form-group">
                     <label for="website">Website</label>
-                    <input type="url" id="website" name="website" placeholder="https://example.com" aria-describedby="website-error">
+                    <input type="url" id="website" name="website" placeholder="https://example.com">
                     <p id="website-error" class="field-error">Enter a valid URL, including https://.</p>
                 </div>
 
@@ -131,5 +131,6 @@
         </div>
         <p class="footer-copyright">&copy; 2026 CrisDev. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
