@@ -10,6 +10,9 @@
     --blue-highlight: #3b82f6;
     --yellow-card: #ffcc29;
     --card-background: #ffffff;
+    --error-red: #c41230;
+    --valid-green: #1a7a32;
+    --focus-blue: #1606f3;
 
     /* Typography */
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -489,6 +492,26 @@ a.gallery-card {
     background-color: #ffffff;
     box-shadow: 2px 2px 0px #000000;
     transition: all 0.2s ease;
+}
+
+/* Focus styles */
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus,
+.contact-form .form-group select:focus {
+    outline: 3px solid var(--focus-blue);
+    outline-offset: 3px;
+}
+
+.contact-form .form-group input.invalid,
+.contact-form .form-group textarea.invalid,
+.contact-form .form-group select.invalid {
+    border-color: var(--error-red);
+}
+
+.contact-form .form-group input.valid,
+.contact-form .form-group textarea.valid,
+.contact-form .form-group select.valid {
+    border-color: var(--valid-green);
 }
 
 .field-hint {
