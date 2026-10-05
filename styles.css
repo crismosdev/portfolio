@@ -498,7 +498,6 @@ a.gallery-card {
 .contact-form .form-group textarea:focus,
 .contact-form .form-group select:focus {
     outline: 3px solid var(--focus-blue);
-    outline-offset: 3px;
 }
 
 .contact-form .form-group input.invalid,
@@ -511,12 +510,6 @@ a.gallery-card {
 .contact-form .form-group textarea.valid,
 .contact-form .form-group select.valid {
     border-color: var(--valid-green);
-}
-
-.field-hint {
-    margin-top: 8px;
-    margin-bottom: 0;
-    font-size: 14px;
 }
 
 /* Sits on the next line under its field so the message stays with that field. */
