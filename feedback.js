@@ -47,7 +47,8 @@ feedbackForm.addEventListener("reset", resetForm);
 // Puts the form back to its initial state: values, borders, messages, and the counter.
 // Clear calls this through the reset event. Submit calls it after reading the name, then writes the thanks message.
 function resetForm() {
-
+ 
+    // Clearn fields
     fullNameInput.value = "";
     emailInput.value = "";
     topicInput.value = "";
@@ -213,11 +214,36 @@ feedbackForm.addEventListener("submit", handleFeedbackSubmit);
 function handleFeedbackSubmit(event) {
     event.preventDefault();
 
-    validateFullName();
-    validateEmail();
-    validateTopic();
-    validateComments();
-    validateWebsite();
+    const nameIsValid = validateFullName();
+    const emailIsValid = validateEmail();
+    const topicIsValid = validateTopic();
+    const commentsAreValid = validateComments();
+    const websiteIsValid = validateWebsite();
+
+    if (!nameIsValid || !emailIsValid || !topicIsValid || !commentsAreValid || !websiteIsValid) {
+        return;
+    }
+
+    // Read the name before resetForm clears the field, then show the message after the status line has been emptied.
+    const fullName = fullNameInput.value.trim();
+    resetForm();
+    showThanksMessage(fullName);
+}
+
+/********************************************************************************/
+// Writes the thanks message and removes it after 4 seconds.
+function showThanksMessage(fullName) {
+    // Write the message.
+    feedbackStatus.textContent = "Thanks for your feedback, " + fullName + "!";
+
+    // Remove the message after 4 seconds.
+    statusTimerId = setTimeout(function () {
+        feedbackStatus.textContent = "";
+        statusTimerId = null;
+        showThanksMessage.statusTimerId = null;
+    }, 4000);
+
+    showThanksMessage.statusTimerId = statusTimerId;
 }
 
 /********************************************************************************/
