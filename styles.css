@@ -100,7 +100,8 @@ body {
 .main-nav a:hover,
 .main-nav a:focus,
 .main-nav a:focus-visible,
-.main-nav a.active {
+.main-nav a.active,
+.main-nav a[aria-current="page"] {
     background-color: var(--yellow-card);
     border: 2px solid #000000;
     box-shadow: 2px 2px 0px #000000;
@@ -668,7 +669,8 @@ footer p {
 .footer-nav a:focus,
 .footer-contact a:hover,
 .footer-contact a:focus,
-.footer-nav a.active {
+.footer-nav a.active,
+.footer-nav a[aria-current="page"] {
     color: var(--yellow-card);
 }
 
