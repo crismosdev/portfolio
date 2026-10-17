@@ -98,10 +98,18 @@ body {
 }
 
 .main-nav a:hover,
+.main-nav a:focus,
+.main-nav a:focus-visible,
 .main-nav a.active {
     background-color: var(--yellow-card);
     border: 2px solid #000000;
     box-shadow: 2px 2px 0px #000000;
+}
+
+.main-nav a:focus,
+.main-nav a:focus-visible {
+    outline: 3px solid var(--focus-blue);
+    outline-offset: 2px;
 }
 
 /* 4. Main Layout & Typography */
