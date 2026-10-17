@@ -528,20 +528,71 @@ a.gallery-card {
     left: 50%;
     z-index: 20;
     transform: translate(-50%, -50%);
-    max-width: min(90vw, 480px);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: min(90vw, 520px);
     margin: 0;
-    padding: 16px 24px;
+    padding: 14px 18px;
     background-color: #ffffff;
     color: #111111;
     border: 3px solid #000000;
-    border-radius: 12px;
-    box-shadow: var(--bold-shadow-small);
+    border-radius: 14px;
+    box-shadow: 6px 6px 0px #000000;
     font-weight: 800;
-    text-align: center;
 }
 
-.form-status:empty {
+.form-status[hidden] {
     display: none;
+}
+
+.form-status-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background-color: #20a766;
+    color: #000000;
+    border: 2.5px solid #000000;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.form-status-text {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 800;
+    color: #111111;
+    text-align: left;
+}
+
+.form-status-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-color: var(--yellow-card);
+    color: #000000;
+    border: 2.5px solid #000000;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.form-status-close:hover,
+.form-status-close:focus {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .form-actions {

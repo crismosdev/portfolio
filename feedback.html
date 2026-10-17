@@ -64,7 +64,11 @@
                     <p id="website-error" class="field-error"></p>
                 </div>
 
-                <p id="feedback-status" class="form-status" role="status" aria-live="polite"></p>
+                <div id="feedback-status" class="form-status" role="status" aria-live="polite" hidden>
+                    <span class="form-status-icon" aria-hidden="true">✓</span>
+                    <span id="feedback-status-text" class="form-status-text"></span>
+                    <button type="button" id="feedback-status-close" class="form-status-close" aria-label="Close notification">✕</button>
+                </div>
 
                 <div class="form-actions">
                     <button type="submit" class="btn">Submit</button>

@@ -4,6 +4,11 @@ const feedbackForm = document.getElementById("feedback-form");
 
 // Live region that announces the success message after a valid submit.
 const feedbackStatus = document.getElementById("feedback-status");
+const feedbackStatusText = document.getElementById("feedback-status-text");
+const feedbackStatusClose = document.getElementById("feedback-status-close");
+
+// Tracks the timeout for hiding the thank you note so it can be cleared early.
+let statusTimerId = null;
 
 // Controls. Each one is validated on its own and styled from the result.
 const fullNameInput = document.getElementById("full-name");
@@ -69,7 +74,7 @@ function resetForm() {
     });
 
     // Leaves the counter hidden and the error message empty.
-    feedbackStatus.textContent = "";
+    hideThanksMessage();
     commentsError.textContent = "";
     commentsError.style.color = "";
 }
@@ -231,16 +236,35 @@ function handleFeedbackSubmit(event) {
 }
 
 /********************************************************************************/
+// Event listener for closing the thanks message manually.
+feedbackStatusClose.addEventListener("click", hideThanksMessage);
+
+// Hides the thanks message and cancels any active timer so a previous timer cannot hide a newer submission.
+function hideThanksMessage() {
+    if (statusTimerId !== null) {
+        clearTimeout(statusTimerId);
+        statusTimerId = null;
+        showThanksMessage.statusTimerId = null;
+    }
+
+    feedbackStatusText.textContent = "";
+    feedbackStatus.hidden = true;
+}
+
+/********************************************************************************/
 // Writes the thanks message and removes it after 4 seconds.
 function showThanksMessage(fullName) {
-    // Write the message.
-    feedbackStatus.textContent = "Thanks for your feedback, " + fullName + "!";
+    if (statusTimerId !== null) {
+        clearTimeout(statusTimerId);
+    }
+
+    // Write the message and reveal the banner.
+    feedbackStatusText.textContent = "Thanks for your feedback, " + fullName + "!";
+    feedbackStatus.hidden = false;
 
     // Remove the message after 4 seconds.
     statusTimerId = setTimeout(function () {
-        feedbackStatus.textContent = "";
-        statusTimerId = null;
-        showThanksMessage.statusTimerId = null;
+        hideThanksMessage();
     }, 4000);
 
     showThanksMessage.statusTimerId = statusTimerId;
