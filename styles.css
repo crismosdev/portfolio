@@ -255,6 +255,10 @@ p {
     flex-wrap: wrap;
 }
 
+.skill-card {
+    justify-content: flex-start;
+}
+
 .skill-card h4 {
     font-size: 36px;
     margin-bottom: 0;
@@ -280,8 +284,28 @@ p {
     color: #ffffff;
 }
 
+.skill-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
 .skill-card p:last-child {
     margin-bottom: 0;
+}
+
+.skill-card strong {
+    color: var(--text-color);
+}
+
+.skill-card a,
+.timeline-card a {
+    color: inherit;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--pink-highlight);
 }
 
 .timeline {
@@ -318,15 +342,6 @@ p {
 
 .timeline-card p:last-child {
     margin-bottom: 0;
-}
-
-.timeline-card a {
-    color: inherit;
-    font-weight: 800;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 3px;
-    text-decoration-color: var(--pink-highlight);
 }
 
 /* 5. Cards */
