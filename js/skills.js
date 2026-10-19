@@ -90,12 +90,20 @@ function renderSkills(skillsArray) {
             const skillCard = document.createElement("article");
             skillCard.classList.add("card", "skill-card");
 
+            // Creates filled stars up to proficiency, and fills the rest up to 5 with empty stars
+            const starsHTML = generateRatingStars(skill.proficiency);
+
+
             skillCard.innerHTML = `
                 <div class="skill-heading">
-                    <h4>${skill.name}</h4>
                     <span class="skill-category-badge">${skill.category}</span>
+                    <h4>${skill.name}</h4>
                 </div>
                 <div class="skill-meta">
+                    <span class="skill-stars" role="img" aria-label="Proficiency: ${skill.proficiency} out of 5 stars">
+                        ${starsHTML}
+                    </span>
+                    <span class="skill-meta-separator" aria-hidden="true">•</span>
                     <span class="skill-experience">${skill.yearsExperience} ${skill.yearsExperience === 1 ? 'year' : 'years'} exp.</span>
                 </div>
                 <p class="skill-description">${skill.description}</p>
@@ -103,6 +111,19 @@ function renderSkills(skillsArray) {
             skillsGrid.appendChild(skillCard);
         });
     }
+}
+
+// Generates the HTML for the rating stars
+function generateRatingStars(proficiency) {
+    let starsHTML = '';
+    for (let i = 0; i < 5; i++) {
+        if (i < proficiency) {
+            starsHTML += '<span class="star filled" aria-hidden="true">★</span>';
+        } else {
+            starsHTML += '<span class="star empty" aria-hidden="true">★</span>';
+        }
+    }
+    return starsHTML;
 }
 
 renderSkills(skills);

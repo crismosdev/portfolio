@@ -248,10 +248,9 @@ p {
 
 .skill-heading {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
 }
 
 .skill-card h4 {
@@ -267,6 +266,7 @@ p {
 
 .skill-category-badge {
     display: inline-block;
+    align-self: flex-end;
     background-color: var(--yellow-card);
     border: 2px solid #000000;
     border-radius: 30px;
@@ -279,11 +279,17 @@ p {
 .skill-meta {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     padding-bottom: 12px;
     border-bottom: 2px solid #000000;
+}
+
+.skill-meta-separator {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-color);
+    line-height: 1;
 }
 
 .skill-experience {
@@ -300,6 +306,25 @@ p {
     text-decoration-thickness: 3px;
     text-underline-offset: 3px;
     text-decoration-color: var(--pink-highlight);
+}
+
+.skill-stars {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.star {
+    font-size: 28px;
+    line-height: 1;
+    -webkit-text-stroke: 1px #000000;
+}
+
+.star.filled {
+    color: var(--yellow-card);
+}
+
+.star.empty {
+    color: #ffffff;
 }
 
 .timeline {
