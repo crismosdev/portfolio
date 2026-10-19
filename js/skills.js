@@ -76,18 +76,19 @@ const skills = [
 /********************************************************************************
  * DOM References
  ********************************************************************************/
+// Skills grid
 const skillsGrid = document.getElementById('skills-grid');
+
+// Skills filter controls
 const skillsControls = document.getElementById('skills-controls');
-const filterButtons = skillsControls.querySelectorAll('[data-category]');
+const filterButtons = document.querySelectorAll('[data-category]');
+
 
 /********************************************************************************
- * Filter State
+ * Functions
  ********************************************************************************/
-// Shared with later sort logic so both steps read one value instead of each
-// control re-querying the DOM or rendering a different subset.
-let currentCategory = "all";
 
-// Render the skills dynamically
+// Render the skills dynamically. Data taken from the skills array.
 function renderSkills(skillsArray) {
     skillsGrid.innerHTML = "";
     // No skills display message
@@ -122,6 +123,7 @@ function renderSkills(skillsArray) {
     }
 }
 
+/********************************************************************************/
 // Generates the HTML for the rating stars
 function generateRatingStars(proficiency) {
     let starsHTML = '';
@@ -135,36 +137,45 @@ function generateRatingStars(proficiency) {
     return starsHTML;
 }
 
+renderSkills(skills);
+
 /********************************************************************************/
-/**
- * Stores the clicked filter category so renderSkills can show a subset
- * instead of always drawing the full skills array.
- * @param {MouseEvent} event - Click from a [data-category] button.
- */
-function handleCategoryFilter(event) {
-    currentCategory = event.currentTarget.dataset.category;
+// Filter State in skills controls. Default is all skills.
+let currentCategory = "all";
 
-    // aria-pressed is the accessible active state; only one filter can be on.
-    filterButtons.forEach(function (button) {
-        button.setAttribute("aria-pressed", button === event.currentTarget ? "true" : "false");
+filterButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      // Read the category value from dataset
+      const selectedCategory = event.currentTarget.dataset.category;
+  
+      // Update active visual and aria states
+      updateActiveButton(event.currentTarget);
+  
+      // Filter the data array and re-render
+      filterAndRenderSkills(selectedCategory);
     });
+  });
 
-    const filteredSkills = currentCategory === "all"
-        ? skills
-        : skills.filter(function (skill) {
-            return skill.category === currentCategory;
-        });
-
-    renderSkills(filteredSkills);
+/********************************************************************************/
+// Updates the active visual and aria states.
+function updateActiveButton(button) {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
 }
 
 /********************************************************************************/
+// Filters the skills based on the category and re-renders.
+function filterAndRenderSkills(category) {
+    // Create a new array subset without modifying original data
+    const filteredSkills = skills.filter(skill => {
+      return category === 'all' || skill.category === category;
+    });
+  
+    // Re-render the grid with the filtered collection
+    renderSkills(filteredSkills);
+  
+  }
 
-/********************************************************************************
- * Event Listeners
- ********************************************************************************/
-filterButtons.forEach(function (button) {
-    button.addEventListener("click", handleCategoryFilter);
-});
+/********************************************************************************/
 
-renderSkills(skills);
+
