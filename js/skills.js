@@ -91,6 +91,10 @@ function renderSkills(skillsArray) {
             skillCard.classList.add("card", "skill-card");
             skillCard.innerHTML = `
                 <h4>${skill.name}</h4>
+                <p>${skill.description}</p>
+                <p>Proficiency: ${skill.proficiency}</p>
+                <p>Experience: ${skill.yearsExperience} ${skill.yearsExperience === 1 ? 'year' : 'years'}</p>
+                <p>Category: ${skill.category}</p>
             `;
             skillsGrid.appendChild(skillCard);
         });
