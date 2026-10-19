@@ -251,51 +251,45 @@ p {
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 16px;
     flex-wrap: wrap;
 }
 
-.skill-card {
-    justify-content: flex-start;
-}
-
 .skill-card h4 {
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 0;
-}
-
-.skill-stars {
-    display: inline-flex;
-    gap: 2px;
-    line-height: 1;
-}
-
-.star {
-    font-size: 28px;
-    line-height: 1;
-    -webkit-text-stroke: 2px #000000;
-}
-
-.star.filled {
-    color: var(--yellow-card);
-}
-
-.star.empty {
-    color: #ffffff;
 }
 
 .skill-card p {
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: 12px;
-}
-
-.skill-card p:last-child {
     margin-bottom: 0;
 }
 
-.skill-card strong {
+.skill-category-badge {
+    display: inline-block;
+    background-color: var(--yellow-card);
+    border: 2px solid #000000;
+    border-radius: 30px;
+    padding: 4px 14px;
+    font-size: 14px;
+    font-weight: 800;
     color: var(--text-color);
+}
+
+.skill-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #000000;
+}
+
+.skill-experience {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--light-text);
 }
 
 .skill-card a,
@@ -349,7 +343,6 @@ p {
     background-color: var(--card-background);
     border: var(--border-thick);
     border-radius: 16px;
-    padding: 24px;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -358,15 +351,18 @@ p {
     cursor: pointer;
 }
 
+.card.skill-card {
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 32px;
+    box-shadow: var(--bold-shadow-small);
+}
+
 .grid-3x3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 64px;
     margin-top: 24px;
-}
-
-#skills-grid {
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .gallery-card,
@@ -916,8 +912,7 @@ footer p {
         line-height: 1.2;
     }
 
-    .grid-3x3,
-    #skills-grid {
+    .grid-3x3 {
         grid-template-columns: 1fr;
         gap: 16px;
     }

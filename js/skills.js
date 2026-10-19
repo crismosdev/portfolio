@@ -89,12 +89,16 @@ function renderSkills(skillsArray) {
         skillsArray.forEach(skill => {
             const skillCard = document.createElement("article");
             skillCard.classList.add("card", "skill-card");
+
             skillCard.innerHTML = `
-                <h4>${skill.name}</h4>
-                <p>${skill.description}</p>
-                <p>Proficiency: ${skill.proficiency}</p>
-                <p>Experience: ${skill.yearsExperience} ${skill.yearsExperience === 1 ? 'year' : 'years'}</p>
-                <p>Category: ${skill.category}</p>
+                <div class="skill-heading">
+                    <h4>${skill.name}</h4>
+                    <span class="skill-category-badge">${skill.category}</span>
+                </div>
+                <div class="skill-meta">
+                    <span class="skill-experience">${skill.yearsExperience} ${skill.yearsExperience === 1 ? 'year' : 'years'} exp.</span>
+                </div>
+                <p class="skill-description">${skill.description}</p>
             `;
             skillsGrid.appendChild(skillCard);
         });
