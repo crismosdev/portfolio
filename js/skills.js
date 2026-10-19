@@ -19,7 +19,7 @@ const skills = [
         id: 2,
         name: "CSS",
         category: "Frontend",
-        proficiency: 3,
+        proficiency: 4,
         yearsExperience: 2,
         description: "Learned layout fundamentals on Scrimba and practiced building responsive Flexbox and CSS Grid layouts with custom properties and keyboard focus styles."
     },
@@ -35,7 +35,7 @@ const skills = [
         id: 4,
         name: "Bootstrap",
         category: "Frameworks",
-        proficiency: 3,
+        proficiency: 2,
         yearsExperience: 1,
         description: "Using pre-built CSS components for rapid prototyping."
     },
@@ -54,5 +54,21 @@ const skills = [
         proficiency: 1,
         yearsExperience: 1,
         description: "Fetching and displaying basic data from public APIs."
+    },
+    {
+        id: 7,
+        name: "Git & GitHub",
+        category: "Tools",
+        proficiency: 3,
+        yearsExperience: 1,
+        description: "Basic version control, committing code to GitHub."
+    },
+    {
+        id: 8,
+        name: "Figma",
+        category: "Tools",
+        proficiency: 2,
+        yearsExperience: 1,
+        description: "Reading basic wireframes designs and translating them into HTML layouts."
     }
 ];
