@@ -38,10 +38,12 @@
         </section>
 
 
-        <section class="skills-story">
+        <section id="dynamic-skills" class="skills-story">
             <h3>My Skills</h3>
             <p>Each rating reflects where I am today, how I picked up the skill, where I put it into practice, and the concrete result you can inspect on this site.</p>
-            <div class="grid-3x3">
+            <div id="skills-controls"></div>
+            <p id="skills-counter" aria-live="polite"></p>
+            <div id="skills-grid" class="grid-3x3">
                 <article class="card skill-card">
                     <div class="skill-heading">
                         <h4>HTML</h4>
@@ -90,13 +92,6 @@
                     <p><strong>Evidence of the result:</strong> Form validation functions showing live error and valid states, plus an accessible confirmation banner using <code>aria-live="polite"</code>.</p>
                 </article>
             </div>
-        </section>
-
-        <section id="dynamic-skills" class="skills-story">
-            <h3>Skills Showcase</h3>
-            <div id="skills-controls"></div>
-            <p id="skills-counter" aria-live="polite"></p>
-            <div id="skills-grid" class="grid-3x3"></div>
         </section>
 
         <section class="experience-timeline">
