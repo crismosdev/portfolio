@@ -41,7 +41,13 @@
         <section id="dynamic-skills" class="skills-story">
             <h3>My Skills</h3>
             <p>Each rating reflects where I am today, how I picked up the skill, where I put it into practice, and the concrete result you can inspect on this site.</p>
-            <div id="skills-controls"></div>
+            <div id="skills-controls" class="skills-controls">
+                <button type="button" class="btn" data-category="all" aria-pressed="true">All Skills</button>
+                <button type="button" class="btn" data-category="Frontend" aria-pressed="false">Frontend</button>
+                <button type="button" class="btn" data-category="Frameworks" aria-pressed="false">Frameworks</button>
+                <button type="button" class="btn" data-category="Backend" aria-pressed="false">Backend</button>
+                <button type="button" class="btn" data-category="Tools" aria-pressed="false">Tools</button>
+            </div>
             <p id="skills-counter" aria-live="polite"></p>
             <div id="skills-grid" class="grid-3x3">
                 <!--
