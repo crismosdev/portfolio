@@ -365,6 +365,10 @@ p {
     margin-top: 24px;
 }
 
+#skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .gallery-card,
 .project-card {
     min-height: 380px;
@@ -912,7 +916,8 @@ footer p {
         line-height: 1.2;
     }
 
-    .grid-3x3 {
+    .grid-3x3,
+    #skills-grid {
         grid-template-columns: 1fr;
         gap: 16px;
     }

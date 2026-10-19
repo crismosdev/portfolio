@@ -84,8 +84,17 @@ function renderSkills(skillsArray) {
     // No skills display message
     if (skillsArray.length === 0) {
         skillsGrid.innerHTML = '<p class="card">No skills to display.</p>';
-        return;
-    } 
+    } else {
+        // Render each skill card
+        skillsArray.forEach(skill => {
+            const skillCard = document.createElement("article");
+            skillCard.classList.add("card", "skill-card");
+            skillCard.innerHTML = `
+                <h4>${skill.name}</h4>
+            `;
+            skillsGrid.appendChild(skillCard);
+        });
+    }
 }
 
-renderSkills([]);
+renderSkills(skills);
