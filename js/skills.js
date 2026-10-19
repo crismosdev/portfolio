@@ -74,9 +74,18 @@ const skills = [
 ];
 
 /********************************************************************************
- * Functions
+ * DOM References
  ********************************************************************************/
 const skillsGrid = document.getElementById('skills-grid');
+const skillsControls = document.getElementById('skills-controls');
+const filterButtons = skillsControls.querySelectorAll('[data-category]');
+
+/********************************************************************************
+ * Filter State
+ ********************************************************************************/
+// Shared with later sort logic so both steps read one value instead of each
+// control re-querying the DOM or rendering a different subset.
+let currentCategory = "all";
 
 // Render the skills dynamically
 function renderSkills(skillsArray) {
@@ -125,5 +134,37 @@ function generateRatingStars(proficiency) {
     }
     return starsHTML;
 }
+
+/********************************************************************************/
+/**
+ * Stores the clicked filter category so renderSkills can show a subset
+ * instead of always drawing the full skills array.
+ * @param {MouseEvent} event - Click from a [data-category] button.
+ */
+function handleCategoryFilter(event) {
+    currentCategory = event.currentTarget.dataset.category;
+
+    // aria-pressed is the accessible active state; only one filter can be on.
+    filterButtons.forEach(function (button) {
+        button.setAttribute("aria-pressed", button === event.currentTarget ? "true" : "false");
+    });
+
+    const filteredSkills = currentCategory === "all"
+        ? skills
+        : skills.filter(function (skill) {
+            return skill.category === currentCategory;
+        });
+
+    renderSkills(filteredSkills);
+}
+
+/********************************************************************************/
+
+/********************************************************************************
+ * Event Listeners
+ ********************************************************************************/
+filterButtons.forEach(function (button) {
+    button.addEventListener("click", handleCategoryFilter);
+});
 
 renderSkills(skills);
