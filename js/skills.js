@@ -30,5 +30,29 @@ const skills = [
         proficiency: 2,
         yearsExperience: 1,
         description: "Introduced to programming fundamentals on Scrimba in 2025 and now building DOM manipulation, event handling, and client-side validation skills at HKR."
+    },
+    {
+        id: 4,
+        name: "Bootstrap",
+        category: "Frameworks",
+        proficiency: 3,
+        yearsExperience: 1,
+        description: "Using pre-built CSS components for rapid prototyping."
+    },
+    {
+        id: 5,
+        name: "Tailwind CSS",
+        category: "Frameworks",
+        proficiency: 2,
+        yearsExperience: 1,
+        description: "Experimenting with utility-first classes for custom designs."
+    },
+    {
+        id: 6,
+        name: "APIs",
+        category: "Backend",
+        proficiency: 1,
+        yearsExperience: 1,
+        description: "Fetching and displaying basic data from public APIs."
     }
 ];
