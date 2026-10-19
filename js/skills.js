@@ -83,6 +83,10 @@ const skillsGrid = document.getElementById('skills-grid');
 const skillsControls = document.getElementById('skills-controls');
 const filterButtons = document.querySelectorAll('[data-category]');
 
+// Live region for the visible count. Updated whenever the grid is redrawn
+// so a filter click and the first page load share the same text.
+const skillsCounter = document.getElementById('skills-counter');
+
 
 /********************************************************************************
  * Functions
@@ -121,6 +125,9 @@ function renderSkills(skillsArray) {
             skillsGrid.appendChild(skillCard);
         });
     }
+
+    // Counter text belongs with the grid so it never lags behind the cards.
+    updateSkillsCounter(skillsArray);
 }
 
 /********************************************************************************/
@@ -136,8 +143,6 @@ function generateRatingStars(proficiency) {
     }
     return starsHTML;
 }
-
-renderSkills(skills);
 
 /********************************************************************************/
 // Filter State in skills controls. Default is all skills.
@@ -177,5 +182,13 @@ function filterAndRenderSkills(category) {
   }
 
 /********************************************************************************/
+// Writes "Showing X of Y skills" so the live region announces the new count
+// after a filter without forcing the user to recount the cards.
+function updateSkillsCounter(filteredSkills) {
+    skillsCounter.textContent = `Showing ${filteredSkills.length} of ${skills.length} skills`;
+}
 
+/********************************************************************************/
+
+renderSkills(skills);
 
