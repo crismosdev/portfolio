@@ -72,3 +72,20 @@ const skills = [
         description: "Reading basic wireframes designs and translating them into HTML layouts."
     }
 ];
+
+/********************************************************************************
+ * Functions
+ ********************************************************************************/
+const skillsGrid = document.getElementById('skills-grid');
+
+// Render the skills dynamically
+function renderSkills(skillsArray) {
+    skillsGrid.innerHTML = "";
+    // No skills display message
+    if (skillsArray.length === 0) {
+        skillsGrid.innerHTML = '<p class="card">No skills to display.</p>';
+        return;
+    } 
+}
+
+renderSkills([]);
