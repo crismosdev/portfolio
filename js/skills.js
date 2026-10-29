@@ -125,9 +125,6 @@ function renderSkills(skillsArray) {
             skillsGrid.appendChild(skillCard);
         });
     }
-
-    // Counter text belongs with the grid so it never lags behind the cards.
-    updateSkillsCounter(skillsArray);
 }
 
 /********************************************************************************/
@@ -187,8 +184,23 @@ function applyFiltersAndSort() {
             if (nameA > nameB) return 1; // nameB comes first
             return 0; // names are equal
         });
+    } else if (currentSort === "proficiency") {
+        // Highest rating first so the strongest skills show at the top.
+        filteredSkills.sort((a, b) => {
+            if (a.proficiency < b.proficiency) return 1;
+            if (a.proficiency > b.proficiency) return -1;
+            return 0;
+        });
+    } else if (currentSort === "experience") {
+        // Highest years first. The dropdown value is experience but the field is yearsExperience.
+        filteredSkills.sort((a, b) => {
+            if (a.yearsExperience < b.yearsExperience) return 1;
+            if (a.yearsExperience > b.yearsExperience) return -1;
+            return 0;
+        });
     }
-    // shows the cards
+    // The counter and the cards both need this same final list.
+    updateSkillsCounter(filteredSkills);
     renderSkills(filteredSkills);
 }
 
