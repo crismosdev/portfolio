@@ -234,13 +234,13 @@ body {
 }
 
 h1 {
-    font-size:82px;
+    font-size:76px;
     font-weight: 900;
     margin-bottom: 16px;
 }
 
 h2 {
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 900;
     margin-bottom: 16px;
     letter-spacing: -1px;
@@ -253,7 +253,7 @@ h3 {
 }
 
 h4 {
-    font-size: 36;
+    font-size: 40px;
     font-weight: 600;
     margin-bottom: 8px;
 }
@@ -928,122 +928,6 @@ footer p {
 }
 
 /* 9. Responsive Design (Media Queries) */
-
-/* Tablet Screen Size (Max width: 900px) */
-@media screen and (max-width: 900px) {
-    .container {
-        padding: 24px;
-    }
-
-    .site-header {
-        padding: 16px;
-    }
-
-    .grid-3x3 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .hero-subtitle {
-        text-align: center;
-    }
-
-    .about-photo {
-        display: none;
-    }
-    .gallery-page-section h2 {
-        font-size: 54px;
-    }
-    .contact-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .contact-section .contact-form {
-        width: 100%;
-        text-align: left;
-    }
-
-    .footer-inner {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .newsletter-lead {
-        white-space: normal;
-    }
-}
-
-/* Mobile Screen Size (Max width: 600px) */
-@media screen and (max-width: 600px) {
-    .container {
-        padding: 16px;
-        margin: 0 auto;
-    }
-    .site-header {
-        padding: 12px;
-    }
-
-    .logo img {
-        width: 48px;
-        height: 48px;
-    }
-
-    .logo-text {
-        font-size: 22px;
-    }
-
-    .bold-box {
-        border: 1px solid #000000;
-    }
-
-    h1 {
-        font-size: 40px;
-    }
-
-    h2,
-    .gallery-page-section h2 {
-        text-align: center;
-        font-size: 36px;
-        line-height: 1.2;
-    }
-
-    h3 {
-        font-size: 30px;
-        line-height: 1.2;
-    }
-
-    .grid-3x3 {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .contact-form {
-        padding: 16px;
-        gap: 16px;
-    }
-
-    /* Adjust neo-shadows for mobile so they don't break the layout */
-    .card, .contact-form, .site-header {
-        box-shadow: none;
-        border-radius: 8px;
-        border: 3px solid #000000;
-    }
-}
-
 /* Burger menu at 1150px and below so the 6 links do not crowd the logo. */
 @media screen and (max-width: 1150px) {
     .menu-toggle {
@@ -1083,6 +967,246 @@ footer p {
         text-align: center;
         border: 2px solid #000000;
         border-radius: 12px;
+    }
+    h1 {
+        font-size: 64px;
+    }
+    h2 {
+        font-size: 54px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    h4 {
+        font-size: 34px;
+    }
+}
+
+/* Tablet Screen Size (Max width: 1020px) */
+@media screen and (max-width: 1020px) {
+    h1 {
+        font-size: 64px;
+    }
+    h2 {
+        font-size: 56px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    h4 {
+        font-size: 34px;
+    }
+    .container {
+        padding: 24px;
+    }
+
+    .site-header {
+        padding: 16px;
+    }
+
+    .grid-3x3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text {
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-break-desktop {
+        display: none;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-subtitle {
+        text-align: center;
+    }
+
+    .hero-subtitle .highlight-yellow {
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+    .about-photo {
+        display: none;
+    }
+    .gallery-page-section h2 {
+        font-size: 54px;
+    }
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-section .contact-form {
+        width: 100%;
+        text-align: left;
+    }
+
+    .footer-inner {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .newsletter-lead {
+        white-space: normal;
+    }
+}
+
+/* Mobile Screen Size (Max width: 600px) */
+@media screen and (max-width: 660px) {
+    .container {
+        padding: 16px;
+        margin: 0 auto;
+    }
+    .site-header {
+        padding: 12px;
+    }
+
+    .logo img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo-text {
+        font-size: 22px;
+    }
+
+    .bold-box {
+        border: 1px solid #000000;
+    }
+
+    h1 {
+        font-size: 54px;
+    }
+
+    h2,
+    .gallery-page-section h2 {
+        text-align: center;
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    h3 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+    h4 {
+        font-size: 30px;
+    }
+    h5 {
+        font-size: 20px;
+    }
+    h6 {
+        font-size: 16px;
+    }
+
+    .hero {
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        margin-top: 12px;
+        margin-bottom: 16px;
+    }
+
+    .hero .featured-img {
+        max-width: 340px;
+    }
+
+    .grid-3x3 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .contact-form {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    /* Adjust neo-shadows for mobile so they don't break the layout */
+    .card, .contact-form, .site-header {
+        box-shadow: none;
+        border-radius: 8px;
+        border: 3px solid #000000;
+    }
+}
+
+/* Mobile Screen Size (Max width: 560px) */
+@media screen and (max-width: 560px) {
+    h1 {
+        font-size: 48px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+
+    .hero .featured-img {
+        max-width: 280px;
+    }
+}
+
+/* Mobile Screen Size (Max width: 500px) */
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 38px;
+    }
+
+    .hero .highlight-blue {
+        white-space: nowrap;
+    }
+
+    .hero .featured-img {
+        max-width: 280px;
+    }
+}
+
+/* Mobile Screen Size (Max width: 380px) */
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h6 {
+        font-size: 14px;
+    }
+
+    .hero {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .hero .featured-img {
+        max-width: 200px;
     }
 }
 
