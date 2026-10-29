@@ -47,12 +47,14 @@
                 <button type="button" class="btn" data-category="Frameworks" aria-pressed="false">Frameworks</button>
                 <button type="button" class="btn" data-category="Backend" aria-pressed="false">Backend</button>
                 <button type="button" class="btn" data-category="Tools" aria-pressed="false">Tools</button>
-                <label for="sort-select">Sort by</label>
-                <select id="sort-select">
-                    <option value="name">Name</option>
-                    <option value="proficiency">Proficiency</option>
-                    <option value="experience">Experience</option>
-                </select>
+                <div class="skills-sort">
+                    <label for="sort-select">Sort by</label>
+                    <select id="sort-select">
+                        <option value="name">Name</option>
+                        <option value="proficiency">Proficiency</option>
+                        <option value="experience">Experience</option>
+                    </select>
+                </div>
             </div>
             <p id="skills-counter" class="skills-counter" aria-live="polite"></p>
             <div id="skills-grid" class="grid-3x3">

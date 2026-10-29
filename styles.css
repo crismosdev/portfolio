@@ -241,18 +241,55 @@ p {
     object-fit: contain;
 }
 
+/* Skills story and experience timeline */
 .skills-story,
 .experience-timeline {
     margin-bottom: 48px;
 }
 
+/* Skills story */
 .skills-controls {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 16px;
     margin: 24px 0;
 }
 
+/* Skills sort */
+.skills-sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skills-sort label {
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.skills-sort select {
+    padding: 8px 16px;
+    border: 3px solid #000000;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: inherit;
+    background-color: #ffffff;
+    box-shadow: var(--bold-shadow-small);
+    cursor: pointer;
+}
+
+.skills-sort select:hover {
+    background-color: var(--yellow-card);
+}
+
+.skills-sort select:focus {
+    outline: 3px solid var(--focus-blue);
+    outline-offset: 2px;
+}
+
+/* Skills grid */
 .skill-heading {
     display: flex;
     flex-direction: column;
@@ -334,6 +371,7 @@ p {
     color: #ffffff;
 }
 
+/* Experience timeline */
 .timeline {
     list-style: none;
     border-left: var(--border-thick);
