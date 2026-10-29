@@ -183,7 +183,6 @@ function filterAndRenderSkills(category) {
 
 /********************************************************************************/
 // Writes "Showing X of Y skills" so the live region announces the new count
-// after a filter without forcing the user to recount the cards.
 function updateSkillsCounter(filteredSkills) {
     skillsCounter.textContent = `Showing ${filteredSkills.length} of ${skills.length} skills`;
 }
