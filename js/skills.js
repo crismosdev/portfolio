@@ -82,6 +82,7 @@ const skillsGrid = document.getElementById('skills-grid');
 // Skills filter controls
 const skillsControls = document.getElementById('skills-controls');
 const filterButtons = document.querySelectorAll('[data-category]');
+const sortSelect = document.getElementById('sort-select');
 
 // Live region for the visible count. Updated whenever the grid is redrawn
 // so a filter click and the first page load share the same text.
@@ -159,6 +160,12 @@ filterButtons.forEach(button => {
       applyFiltersAndSort();
     });
   });
+
+// The dropdown only saves the sort choice. applyFiltersAndSort still does the real work.
+sortSelect.addEventListener('change', (event) => {
+    currentSort = event.currentTarget.value;
+    applyFiltersAndSort();
+});
 
 /********************************************************************************/
 // Updates the active visual and aria states.
