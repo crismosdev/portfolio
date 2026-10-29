@@ -170,8 +170,12 @@ sortSelect.addEventListener('change', (event) => {
 /********************************************************************************/
 // Updates the active visual and aria states.
 function updateActiveButton(button) {
-    filterButtons.forEach(btn => btn.classList.remove('active'));
+    filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+    });
     button.classList.add('active');
+    button.setAttribute('aria-pressed', 'true');
 }
 
 /********************************************************************************/

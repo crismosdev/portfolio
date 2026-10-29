@@ -317,6 +317,15 @@ p {
     margin: 24px 0;
 }
 
+/* Stays visually pressed so the current filter is obvious without relying on hover. */
+.skills-controls .btn.active,
+.skills-controls .btn[aria-pressed="true"] {
+    background-color: #000000;
+    color: #ffffff;
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000000;
+}
+
 /* Skills sort */
 .skills-sort {
     display: flex;
