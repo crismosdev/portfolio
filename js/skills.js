@@ -150,14 +150,13 @@ let currentCategory = "all";
 
 filterButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-      // Read the category value from dataset
-      const selectedCategory = event.currentTarget.dataset.category;
-  
+      // Store the category on shared state for sort and filter.
+      currentCategory = event.currentTarget.dataset.category;
+
       // Update active visual and aria states
       updateActiveButton(event.currentTarget);
-  
-      // Filter the data array and re-render
-      filterAndRenderSkills(selectedCategory);
+
+      applyFiltersAndSort();
     });
   });
 
@@ -169,17 +168,16 @@ function updateActiveButton(button) {
 }
 
 /********************************************************************************/
-// Filters the skills based on the category and re-renders.
-function filterAndRenderSkills(category) {
-    // Create a new array subset without modifying original data
+// Applies the current filter (and later sort) in one place so a category
+// click and a sort change cannot drift into different visible lists.
+// Filter first: sort must run on the category subset, not the full skills array.
+function applyFiltersAndSort() {
     const filteredSkills = skills.filter(skill => {
-      return category === 'all' || skill.category === category;
+        return currentCategory === 'all' || skill.category === currentCategory;
     });
-  
-    // Re-render the grid with the filtered collection
+
     renderSkills(filteredSkills);
-  
-  }
+}
 
 /********************************************************************************/
 // Writes "Showing X of Y skills" so the live region announces the new count
@@ -189,5 +187,5 @@ function updateSkillsCounter(filteredSkills) {
 
 /********************************************************************************/
 
-renderSkills(skills);
+applyFiltersAndSort();
 
