@@ -148,6 +148,9 @@ function generateRatingStars(proficiency) {
 // Filter State in skills controls. Default is all skills.
 let currentCategory = "all";
 
+// Remembers which sort option is selected. Starts as name because that is the first choice in the dropdown.
+let currentSort = "name";
+
 filterButtons.forEach(button => {
     button.addEventListener('click', (event) => {
       // Store the category on shared state for sort and filter.
@@ -168,14 +171,24 @@ function updateActiveButton(button) {
 }
 
 /********************************************************************************/
-// Applies the current filter (and later sort) in one place so a category
-// click and a sort change cannot drift into different visible lists.
-// Filter first: sort must run on the category subset, not the full skills array.
+// Filters first, then sorts, then shows the cards. I put both steps here so the buttons and the dropdown always use the same list.
 function applyFiltersAndSort() {
     const filteredSkills = skills.filter(skill => {
         return currentCategory === 'all' || skill.category === currentCategory;
     });
 
+    // names are lowercased
+    if (currentSort === "name") {
+        filteredSkills.sort((a, b) => {
+            const nameA = a.name.toLowerCase();
+            const nameB = b.name.toLowerCase();
+            // alpahbetical order is determined by the return values
+            if (nameA < nameB) return -1; // nameA comes first
+            if (nameA > nameB) return 1; // nameB comes first
+            return 0; // names are equal
+        });
+    }
+    // shows the cards
     renderSkills(filteredSkills);
 }
 
