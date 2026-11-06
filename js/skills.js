@@ -205,8 +205,8 @@ function applyFiltersAndSort() {
     } else if (currentSort === "experience") {
         // Highest years first. The dropdown value is experience but the field is yearsExperience.
         filteredSkills.sort((a, b) => {
-            if (a.yearsExperience < b.yearsExperience) return 1;
-            if (a.yearsExperience > b.yearsExperience) return -1;
+            if (a.yearsExperience < b.yearsExperience) return -1;
+            if (a.yearsExperience > b.yearsExperience) return 1;
             return 0;
         });
     }
